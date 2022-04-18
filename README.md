@@ -13,7 +13,10 @@ Demo for CNCF Id
 
 ```bash
 # Create + run container
-docker run --name random-generator -e LOG_FILE=/logs/random.log -p 8080:8080 k8spatterns/random-generator:1.0
+docker run --name random-generator \
+    -e LOG_FILE=/logs/random.log \
+    -p 8080:8080 \
+    k8spatterns/random-generator:1.0
 
 # Accessing the container
 docker exec -it random-generator bash
