@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: random-generator-deployment
+  labels:
+    app: random-generator
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: random-generator
+  template:
+    metadata:
+      labels:
+        app: random-generator
+    spec:
+      containers:
+
+        - image: k8spatterns/random-generator:1.0
+          name: main
+          env:
+            - name: LOG_FILE
+              value: /logs/random.log
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+        
