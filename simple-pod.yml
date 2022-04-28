@@ -9,9 +9,7 @@ spec:
 
     - image: k8spatterns/random-generator:1.0
       name: main
-      env:
-        - name: LOG_FILE
-          value: /logs/random.log
+      env: []
       ports:
         - containerPort: 8080
           protocol: TCP
